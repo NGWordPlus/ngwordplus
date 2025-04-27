@@ -2,10 +2,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Noto Sans JP", "Rounded M+ 1c", sans-serif;
-  overflow: hidden; /* スクロール禁止 */
+  overflow: hidden;
   height: 100vh;
   width: 100vw;
   background: linear-gradient(to bottom right, #f0f9ff, #cbebff);
+  display: flex;
+  justify-content: center; /* 中央寄せ */
+}
+
+.main-wrapper {
+  width: 100%;
+  max-width: 390px; /* iPhoneサイズ想定 */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header#mainHeader {
@@ -13,12 +23,13 @@ header#mainHeader {
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 390px;
   height: 60px;
   background-color: #4CAF50;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 1000;
 }
 
 #headerTitle {
@@ -29,7 +40,7 @@ header#mainHeader {
 }
 
 .screen {
-  padding-top: 70px; /* ヘッダー分の余白を空ける */
+  padding-top: 70px; /* ヘッダー分の余白 */
   height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
@@ -38,7 +49,7 @@ header#mainHeader {
   text-align: center;
 }
 
-h1, h2, h3 {
+h2, h3 {
   margin: 10px;
 }
 
