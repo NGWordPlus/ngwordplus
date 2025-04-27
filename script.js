@@ -14,6 +14,7 @@ const plusButton = document.getElementById('plusButton');
 const minusButton = document.getElementById('minusButton');
 const scoreDisplay = document.getElementById('scoreDisplay');
 const backButton = document.getElementById('backButton');
+const headerTitle = document.getElementById('headerTitle');
 
 // スタートボタン押したとき
 startButton.addEventListener('click', () => {
@@ -36,10 +37,11 @@ function startCountdown() {
       countdownNumber.textContent = countdown;
     } else {
       clearInterval(interval);
-      showPlayScreen(); // すぐプレイ画面へ！
+      showPlayScreen();
     }
   }, 1000);
 }
+
 // プレイ画面表示
 function showPlayScreen() {
   countdownScreen.style.display = 'none';
@@ -61,7 +63,12 @@ minusButton.addEventListener('click', () => {
   scoreDisplay.textContent = `現在の得点：${score}点`;
 });
 
-// トップへ戻る
+// トップへ戻る（ボタン）
 backButton.addEventListener('click', () => {
   location.reload(); // ページリロードでリセット
+});
+
+// ヘッダータイトル押したらトップへ戻る
+headerTitle.addEventListener('click', () => {
+  location.reload();
 });
