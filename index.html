@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>NGWordPlus</title>
+  <title>NGWordPLus</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,28 +10,29 @@
     <h1 id="headerTitle">NGWord+</h1>
   </header>
 
-  <!-- トップ画面 -->
-  <div id="topScreen" class="screen">
-    <h1>NGWordPlus</h1>
-    <input type="text" id="nameInput" placeholder="あなたの名前を入力" />
-    <button id="startButton">スタート！</button>
-  </div>
-
-  <!-- カウントダウン画面 -->
-  <div id="countdownScreen" class="screen" style="display:none;">
-    <div id="countdownNumber">3</div>
-  </div>
-
-  <!-- プレイ画面 -->
-  <div id="playScreen" class="screen" style="display:none;">
-    <h2 id="playerName"></h2>
-    <h3 id="playerWord">お題（仮）</h3>
-    <div class="button-group">
-      <button id="plusButton">＋5点</button>
-      <button id="minusButton">−1点</button>
+  <div class="main-wrapper">
+    <!-- トップ画面 -->
+    <div id="topScreen" class="screen">
+      <input type="text" id="nameInput" placeholder="あなたの名前を入力" />
+      <button id="startButton">スタート！</button>
     </div>
-    <div id="scoreDisplay">現在の得点：0点</div>
-    <button id="backButton" class="back-button">トップへ戻る</button>
+
+    <!-- カウントダウン画面 -->
+    <div id="countdownScreen" class="screen" style="display:none;">
+      <div id="countdownNumber">5</div>
+    </div>
+
+    <!-- プレイ画面 -->
+    <div id="playScreen" class="screen" style="display:none;">
+      <h2 id="playerName"></h2>
+      <h3 id="playerWord">お題（仮）</h3>
+      <div class="button-group">
+        <button id="plusButton">＋5点</button>
+        <button id="minusButton">−1点</button>
+      </div>
+      <div id="scoreDisplay">現在の得点：0点</div>
+      <button id="backButton" class="back-button">トップへ戻る</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
