@@ -65,7 +65,7 @@ minusButton.addEventListener('click', () => {
 
 // トップへ戻る（ボタン）
 backButton.addEventListener('click', () => {
-  location.reload(); // ページリロードでリセット
+  location.reload();
 });
 
 // ヘッダータイトル押したらトップへ戻る
