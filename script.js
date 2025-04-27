@@ -2,6 +2,13 @@ let playerName = "";
 let score = 0;
 let countdown = 5;
 
+const ngWords = [
+  "カレー", "猫", "旅行", "スマホ", "雨", 
+  "ゲーム", "映画", "コーヒー", "朝ごはん", "電車",
+  "学校", "仕事", "コンビニ", "友達", "犬",
+  "スポーツ", "音楽", "テレビ", "漫画", "お金"
+];
+
 // 要素取得
 const topScreen = document.getElementById('topScreen');
 const countdownScreen = document.getElementById('countdownScreen');
@@ -15,6 +22,7 @@ const minusButton = document.getElementById('minusButton');
 const scoreDisplay = document.getElementById('scoreDisplay');
 const backButton = document.getElementById('backButton');
 const headerTitle = document.getElementById('headerTitle');
+const changeWordButton = document.getElementById('changeWordButton');
 
 // スタートボタン押したとき
 startButton.addEventListener('click', () => {
@@ -42,6 +50,12 @@ function startCountdown() {
   }, 1000);
 }
 
+// ランダムにNGワード設定
+function setRandomWord() {
+  const randomWord = ngWords[Math.floor(Math.random() * ngWords.length)];
+  document.getElementById('playerWord').textContent = randomWord;
+}
+
 // プレイ画面表示
 function showPlayScreen() {
   countdownScreen.style.display = 'none';
@@ -49,6 +63,7 @@ function showPlayScreen() {
   playerNameDisplay.textContent = playerName;
   score = 0;
   scoreDisplay.textContent = `現在の得点：${score}点`;
+  setRandomWord();
 }
 
 // 点数加算
@@ -61,6 +76,11 @@ plusButton.addEventListener('click', () => {
 minusButton.addEventListener('click', () => {
   score -= 1;
   scoreDisplay.textContent = `現在の得点：${score}点`;
+});
+
+// お題変更ボタン
+changeWordButton.addEventListener('click', () => {
+  setRandomWord();
 });
 
 // トップへ戻る（ボタン）
