@@ -342,7 +342,7 @@ function showPlayScreen() {
 
 // 点数加算
 plusButton.addEventListener('click', () => {
-  score += 7;
+  score += 6;
   scoreDisplay.textContent = `現在の得点：${score}点`;
 });
 
