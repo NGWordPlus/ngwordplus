@@ -7,51 +7,37 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- スタート画面 -->
-  <div id="start-screen">
-    <h1>NGWordPlus</h1>
-    <input type="text" id="nameInput" placeholder="名前を入力">
-    <button id="startButton">スタート</button>
+  <header id="mainHeader">
+    <h1 id="headerTitle">NGWord+</h1>
+  </header>
 
-    <!-- ▼ ルール説明を追加 ▼ -->
-    <section style="padding: 1rem;">
-      <details>
-        <summary style="font-weight: bold; font-size: 1.2rem;">ゲームルールを見る</summary>
-        <div style="margin-top: 0.5rem; font-size: 0.95rem; line-height: 1.5;">
-          <p><strong>🕹 NGWordPlus ルール</strong></p>
-          <ul>
-            <li>制限時間：<strong>10分</strong></li>
-            <li>勝利条件：<strong>10点で即勝利</strong>（時間切れ時は最高得点者）</li>
-          </ul>
-          <p><strong>✅ 得点ルール</strong></p>
-          <ul>
-            <li>他人のNGを当てた：<strong>＋7点</strong></li>
-            <li>自分のNGを言った：<strong>−1点</strong></li>
-            <li>NG当てに失敗した：<strong>−1点</strong></li>
-            <li>自分のNGを変更：<strong>−1点</strong></li>
-            <li>他人のNGを変更（宣言者が−1点）：<strong>−1点</strong></li>
-          </ul>
-          <p><strong>💡 補足ルール</strong></p>
-          <ul>
-            <li>NG当て宣言は連続ではできない（誰かが宣言してからでないと再宣言不可）</li>
-            <li>NGの変更は何回でもOK（ただしその都度 −1点）</li>
-            <li>会話は自由に。相手の行動を観察しよう！</li>
-          </ul>
-        </div>
-      </details>
-    </section>
-  </div>
-
-  <!-- ゲーム画面 -->
-  <div id="game-screen" style="display: none;">
-    <h2 id="playerName"></h2>
-    <p id="ngWord"></p>
-    <div class="button-container">
-      <button id="plusButton">＋7点</button>
-      <button id="minusButton">−1点</button>
+  <div class="main-wrapper">
+    <!-- トップ画面 -->
+    <div id="topScreen" class="screen">
+      <input type="text" id="nameInput" placeholder="あなたの名前を入力" />
+      <button id="startButton">スタート！</button>
     </div>
-    <p id="scoreDisplay">現在の得点：0点</p>
-    <button id="backButton">トップに戻る</button>
+
+    <!-- カウントダウン画面 -->
+    <div id="countdownScreen" class="screen" style="display:none;">
+      <div id="countdownNumber">5</div>
+    </div>
+
+    <!-- プレイ画面 -->
+    <div id="playScreen" class="screen" style="display:none;">
+      <h2 id="playerName"></h2>
+      <h3 id="playerWord">お題（仮）</h3>
+
+      <div class="button-group">
+        <button id="plusButton">＋7点</button>
+        <button id="minusButton">−1点</button>
+      </div>
+
+      <div id="scoreDisplay">現在の得点：0点</div>
+
+      <button id="changeWordButton" class="change-button">お題を変更する</button>
+      <button id="backButton" class="back-button">トップへ戻る</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
